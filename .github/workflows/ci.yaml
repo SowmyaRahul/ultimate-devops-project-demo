@@ -61,7 +61,7 @@ jobs:
           context: src/product-catalog
           file: src/product-catalog/Dockerfile
           push: true
-          tags: ${{ secrets.ECR_REGISTRY }}/product-catalog:${{ github.sha }}
+          tags: ${{ secrets.ECR_REGISTRY }}:${{ github.sha }}
 
   updatek8s:
     runs-on: ubuntu-latest
