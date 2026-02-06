@@ -74,7 +74,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Update manifest
         run: | 
-          sed -i "s|image: .*|image: ${{ secrets.ECR_REGISTRY }}/product-catalog:${{ github.sha }}|" kubernetes/productcatalog/deploy.yaml
+          sed -i "s|image: .*|image: ${{ secrets.ECR_REGISTRY }}:${{ github.sha }}|" kubernetes/productcatalog/deploy.yaml
       - name: Commit and push
         run: |
           git config --global user.email "reddy.pasunoori03@gmail.com"
